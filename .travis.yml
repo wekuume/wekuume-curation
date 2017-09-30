@@ -1,0 +1,18 @@
+sudo: false
+dist: trusty
+language: node_js
+node_js:
+- '4.1'
+cache:
+  directories:
+  - node_modules
+install:
+- npm install -g metalsmith
+script:
+- make
+after_script:
+- test $TRAVIS_TEST_RESULT == "0" && test $TRAVIS_PULL_REQUEST == "false" && test
+  $TRAVIS_BRANCH == "master" && make install
+env:
+  global:
+    secure: TlTPXtgH7QkA1CPsky6WI/Xp16/TllvLKW4rtV63Zz1GJGfKEYEM/WtXmSHy1/mPnUewcEul9+TvHA+xQkL4HZkICbQPjVvvlj8efrCvzfmsbvSV9VCSErKN+Gbeiv4c5YE1FmTEWE0XPbqMhbgKXyTa7bHTZXn6pQUK59unvbsgK0hAUGm4V/OC7LmG0QNpPvw/KNz1ziP0kQBnHaYZRmut6tM0XxPEw6h7OeeoEwgNKcm52hQMMcO4Z7C7eVvMgjV1OEYeM9cANTW38kV2tt5kZXS6MyCdOtiYFeOKK4mrNroVFjRBTqEwpmGNDfiaX8zDXOCcrJdnpto8Ioto6RcwITC568Dr7qe+CINaZAzcfO8SiPg9LNJ3taPTF13I8ZmoW4853tjA87hv+a94UDyFrKTPamVxVWJR9bxKpxhPwUJrpiRPedPq4ytjrcImXieQvnoUkOz/rFRHHlI/R5PvP3cnBhNdHbGOq2yRLyWXuj/luBrLGKzWS60q5OI5e+0mVKWZJ51nJzq3qdHgVEVcQ3S/rG0WiVw0XUTMokeIhP7l2hgXmtr63ackAGgzQZx+427U2QNgGlM+vKH92e3LZzrOxZFmCyTa6K0Bcc2swR2V0O5ZIQ6r79Wy9WnjB3ysX0L3bfUln5OlbGtNV9QSIW1gT7MZbtnDW3lZtP8=

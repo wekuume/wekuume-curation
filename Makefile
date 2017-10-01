@@ -46,7 +46,7 @@ $(ZIPS) : %.zip : | %
 dist: $(ZIPS)
 
 deploy-mobile: dist
-	git clone "https://github.com/wekuume/wekuuume.com.git" mobile/build-web; \
+	git clone "https://github.com/wekuume/wekuume.com.git" mobile/build-web; \
 	cp -R mobile/build mobile/build-web/dist; \
 	cd mobile/build-web; \
 	git config --local user.name "Travis CI wekuume-auto-builder"; \

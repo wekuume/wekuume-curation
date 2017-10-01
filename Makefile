@@ -53,13 +53,28 @@ deploy-mobile: dist
 	git config --local user.email "joshoke2003@gmail.com"; \
 	git remote add upstream "https://${GH_TOKEN}@github.com/wekuume/wekuume.com.git"; \
 	git fetch upstream; \
-	git reset upstream/gh-pages; \
+	git reset upstream/master; \
 	touch .; \
 	git add -A .; \
 	git commit -m "Rebuilt mobile index at ${REV}"; \
-	#git push -q upstream HEAD:master \
-	#push to gh-pages - find better way
+	git push -q upstream HEAD:master 
+	
+	
+
+#push to gh-pages - find better way	
+deploy-mob: dist
+	git clone "https://github.com/wekuume/wekuume.com.git" -b gh-pages mobile/build-mob; \
+	cp -R mobile/build mobile/build-mob/dist; \
+	cd mobile/build-mob; \
+	git config --local user.name "Travis CI wekuume-auto-builder"; \
+	git config --local user.email "joshoke2003@gmail.com"; \
+	git remote add upstream "https://${GH_TOKEN}@github.com/wekuume/wekuume.com.git"; \
+	git fetch upstream; \
+	git reset upstream/gh-pages; \
+	touch .; \
+	git add -A .; \
+	git commit -m "Rebuilt gh-pages for mobile index at ${REV}"; \
 	git push -q upstream HEAD:gh-pages
 
 #only deploy for mobile
-install: deploy-mobile 
+install: deploy-mobile deploy-mob

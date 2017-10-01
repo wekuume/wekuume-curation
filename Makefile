@@ -51,7 +51,7 @@ deploy-mobile: dist
 	cd mobile/build-web; \
 	git config --local user.name "Travis CI wekuume-auto-builder"; \
 	git config --local user.email "joshoke2003@gmail.com"; \
-	git remote add upstream "https://${GH_TOKEN}@github.com/wekuume/wekuuume.com.git"; \
+	git remote add upstream "https://${GH_TOKEN}@github.com/wekuume/wekuume.com.git"; \
 	git fetch upstream; \
 	git reset upstream/master; \
 	touch .; \
@@ -59,4 +59,4 @@ deploy-mobile: dist
 	git commit -m "Rebuilt mobile index at ${REV}"; \
 	git push -q upstream HEAD:master
 
-install: deploy-mobile
+install: deploy-mobile deploy-web

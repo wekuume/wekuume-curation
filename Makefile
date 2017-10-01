@@ -59,4 +59,5 @@ deploy-mobile: dist
 	git commit -m "Rebuilt mobile index at ${REV}"; \
 	git push -q upstream HEAD:master
 
-install: deploy-mobile deploy-web
+#only deploy for mobile
+install: deploy-mobile 

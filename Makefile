@@ -59,11 +59,7 @@ deploy-mobile: dist
 	git commit -m "Rebuilt mobile index at ${REV}"; \
 	git push -q upstream HEAD:master \
 	#push to gh-pages - find better way
-	git fetch upstream && reset upstream/gh-pages; \
-	touch .; \
-	git add -A .; \
-	git commit -m "Rebuilt mobile gh-pages index at ${REV}"; \
-	git push -q upstream HEAD:gh-pages \
+	git push -q upstream HEAD:gh-pages
 
 #only deploy for mobile
 install: deploy-mobile 

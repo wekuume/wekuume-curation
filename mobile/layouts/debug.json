@@ -22,7 +22,7 @@
 {%- endfor -%}
       ],
       "updatedAt": "2015-11-26T00:00:00.000Z",
-      "downloadUrl": "https://openmentoring.io/dist/{{t.topic}}.zip"
+      "downloadUrl": "https://wekuume.github.io/wekuume.com/dist/en/{{t.topic}}.zip"
     }
   ,
     {% endif -%}{%- endfor -%}
@@ -51,7 +51,7 @@
         {%- endfor -%}
       ],
       "updatedAt": "2015-11-26T00:00:00.000Z",
-      "downloadUrl": "https://openmentoring.io/dist/{{u.topic}}.zip"
+      "downloadUrl": "https://wekuume.github.io/wekuume.com/dist/en/{{u.topic}}.zip"
     }
   {% endif -%}{%- endfor -%}
 {%- endif -%}{%- endfor -%}

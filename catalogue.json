@@ -4,7 +4,7 @@
       "wekuume": {
         "type": "git",
         "format": "markdown+yaml",
-        "url": "https://github.com/wekuume/wekuume-content",
+        "url": "https://wekuume.github.io/wekuume.com/",
         "metadata" : {
           "audience-type": ""
         }

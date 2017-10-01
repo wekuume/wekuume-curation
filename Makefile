@@ -53,11 +53,11 @@ deploy-mobile: dist
 	git config --local user.email "joshoke2003@gmail.com"; \
 	git remote add upstream "https://${GH_TOKEN}@github.com/wekuume/wekuume.com.git"; \
 	git fetch upstream; \
-	git reset upstream/master; \
+	git reset upstream/gh-pages; \
 	touch .; \
 	git add -A .; \
 	git commit -m "Rebuilt mobile index at ${REV}"; \
-	git push -q upstream HEAD:master \
+	#git push -q upstream HEAD:master \
 	#push to gh-pages - find better way
 	git push -q upstream HEAD:gh-pages
 

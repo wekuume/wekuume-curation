@@ -1,0 +1,14 @@
+{
+  "sources": [
+    {
+      "wekuume": {
+        "type": "git",
+        "format": "markdown+yaml",
+        "url": "https://github.com/wekuume/wekuume-content",
+        "metadata" : {
+          "audience-type": ""
+        }
+      }
+    }
+  ]
+}

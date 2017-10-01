@@ -1,0 +1,61 @@
+{
+  "updatedAt": "{{date}}",
+  "items": [
+    {% for lang, l in collections.tree -%}
+    {%- for topic, t in l|dictsort -%}{%- if t.topic -%}{%- if t.topic != "_topic" -%}
+    {
+      "slug": "{{ t.topic }}",
+      "type": "topic",
+      "image": "{{ t.image }}",
+      "title": "{{ t.title }}",
+      "parentTitle": "",
+      "locale": "{{ t.lang }}",
+      "categories": [
+{%- set comma = joiner() -%}
+{%- for prof in t.profile -%}
+        {{ comma() }} "profile:{{ prof }}"
+{%- endfor -%}
+{%- for plat in t.platform -%}
+        {{ comma() }} "platform:{{ plat }}"
+{%- endfor -%}
+{%- for prot in t.protect -%}
+        {{ comma() }} "protect:{{ prot }}"
+{%- endfor -%}
+      ],
+      "updatedAt": "{{date}}",
+      "downloadUrl": "http://openmentoring.io/{{t.lang}}/topics/{{t.topic}}.zip"
+    }
+  ,
+    {% endif %}{% endif %}{%- endfor -%}
+  {%- endfor -%}
+{%- set comma = joiner() -%}
+{%- for lang, l in collections.tree -%}
+  {%- for topic, t in l|dictsort -%}{%- if t.topic -%}{%- if t.topic != "_topic" -%}
+    {%- for unit, u in t|dictsort -%}{%- if u.unit -%}
+  {{ comma() }}
+    {
+      "slug": "{{ u.topic }}_{{ u.unit }}",
+      "type": "unit",
+      "title": "{{ u.title }}",
+      "parentTitle": "{{ t.title }}",
+      "locale": "{{ u.lang }}",
+      "categories": [
+        {%- set in_comma = joiner() -%}
+        {%- for prof in u.profile -%}
+          {{ in_comma() }} "profile:{{ prof }}"
+        {%- endfor -%}
+        {%- for plat in u.platform -%}
+          {{ in_comma() }}"platform:{{ plat }}"
+        {%- endfor -%}
+        {%- for prot in u.protect -%}
+          {{ in_comma() }}"protect:{{ prot }}"
+        {%- endfor -%}
+      ],
+      "updatedAt": "{{date}}",
+      "downloadUrl": "http://openmentoring.io/{{u.lang}}/topics/{{u.topic}}/index.json.gz"
+    }
+  {% endif %}{%- endfor -%}
+{%- endif -%}{%- endif -%}{%- endfor -%}
+{%- endfor -%}
+  ]
+}

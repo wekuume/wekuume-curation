@@ -23,7 +23,7 @@
 {%- endfor -%}
       ],
       "updatedAt": "{{date}}",
-      "downloadUrl": "https://wekuume.github.io/wekuume.com/dist/{{t.lang}}/topics/{{t.topic}}.zip"
+      "downloadUrl": "https://wekuume.github.io/wekuume.com/dist/build/{{t.lang}}/topics/{{t.topic}}.zip"
     }
   ,
     {% endif %}{% endif %}{%- endfor -%}
@@ -52,7 +52,7 @@
         {%- endfor -%}
       ],
       "updatedAt": "{{date}}",
-      "downloadUrl": "https://wekuume.github.io/wekuume.com/dist/{{u.lang}}/topics/{{u.topic}}/index.json.gz"
+      "downloadUrl": "https://wekuume.github.io/wekuume.com/dist/build/{{u.lang}}/topics/{{u.topic}}/index.json.gz"
     }
   {% endif %}{%- endfor -%}
 {%- endif -%}{%- endif -%}{%- endfor -%}

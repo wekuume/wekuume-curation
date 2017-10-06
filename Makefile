@@ -17,6 +17,7 @@ content:
 
 prepare: modules content
 	cd content;	\
+	
 	git pull
 
 gitbook: web/build/_book/gitbook

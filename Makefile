@@ -46,7 +46,7 @@ $(ZIPS) : %.zip : | %
 
 dist: $(ZIPS)
 
-# --- push to master branch
+# ---- push to master branch
 deploy-mobile: dist
 	git clone "https://github.com/wekuume/wekuume.com.git" mobile/build-web; \
 	cp -R mobile/build mobile/build-web/dist; \

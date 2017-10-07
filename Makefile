@@ -61,7 +61,7 @@ deploy-mobile: dist
 	git commit -m "Rebuilt mobile index at ${REV}"; \
 	git push -q upstream HEAD:master 
 
-# --- push to gh-pages - find better way to do this and merge in single build
+# ---- push to gh-pages - find better way to do this and merge in single build
 deploy-mob: dist
 	git clone "https://github.com/wekuume/wekuume.com.git" -b gh-pages mobile/build-mob; \
 	cp -R mobile/build mobile/build-mob/dist; \

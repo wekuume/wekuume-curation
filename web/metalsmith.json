@@ -19,15 +19,6 @@
     "metalsmith-paths": {
       "property": "paths"
     },
-    "metalsmith-generate": [
-      { "path": "index.json", "metadata": { "layout": "index.json" } },
-      { "path": "elements.csv", "metadata": { "layout": "elements.csv" } },
-      { "path": "connections.csv", "metadata": { "layout": "connections.csv" } },
-      { "path": "en/SUMMARY.md", "metadata": { "layout": "summary.md" } }
-    ],
-    "metalsmith-remove": [
-      {"pattern": "*/topics/_*/**"}
-    ],
     "metalsmith-collections": {
       "cards": {
         "pattern": ":lang/topics/:topic/:unit/*-*.md"
@@ -60,12 +51,6 @@
       {"pattern": "*/topics/*/*/*-*-android*.md", "metadata": {"array": "true", "platform": [ "android" ] }},
       {"pattern": "*/topics/*/*/*-*-windows*.md", "metadata": {"array": "true", "platform": [ "windows" ] }}
     ],
-    "metalsmith-many-more": {
-      "pattern": "*/topics/*/*/*-*.html",
-      "key": "cards",
-      "trim": true,
-      "json": true
-    },
     "metalsmith-collection-metadata": [
       {"action": "merge", "source": [ "topics", "units", "cards" ], "target": "tree", "ignore": [ "stats", "previous", "next", "mode", "collection" ]},
       {"action": "up", "source": "tree", "fields": [ "protect", "profile", "platform"], "ignore": [ "contents", "stats", "previous", "next", "mode", "collection" ]}

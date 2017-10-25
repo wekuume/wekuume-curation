@@ -88,7 +88,7 @@ $(ZIPS) : %.zip : | %
 dist: $(ZIPS)
 
 deploy-web: dist
-	# Copy mobile build with zipped topics to web source
+	# Copy mobile build with zipped topics to web source --
 	@mkdir -p web/build/dist; \
 	cp -R mobile/build/* web/build/dist; \
 	cd web/build; \
